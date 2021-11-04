@@ -1,4 +1,4 @@
-module mpasswordeval
+module github.com/jiamingming/mpasswordeval
 
 go 1.17
 
