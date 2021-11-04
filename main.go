@@ -1,10 +1,5 @@
 package main
 
-import (
-	"fmt"
-	"mpasswordeval/verifier"
-)
-
 /**
  *main
  *@author: jiamingm
@@ -14,8 +9,8 @@ import (
 
 func main() {
 
-	zxcvbn := &verifier.Zxcvbn{}
-	verify, s, err := zxcvbn.ZxcvbnVerify("PassWord123")
-	fmt.Println(verify, s, err)
+	//zxcvbn := &verifier.Zxcvbn{}
+	//verify, s, err := zxcvbn.ZxcvbnVerify("PassWord123")
+	//fmt.Println(verify, s, err)
 
 }
