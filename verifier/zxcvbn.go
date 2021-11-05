@@ -2,7 +2,6 @@ package verifier
 
 import (
 	"errors"
-	"fmt"
 	"github.com/nbutton23/zxcvbn-go"
 )
 
@@ -13,13 +12,10 @@ import (
  *@tips:
  */
 
-type Zxcvbn struct {
-}
+func (mpe *MPasswordEval) ZxcvbnVerify(pwd string) (bool, string, error) {
 
-func (z *Zxcvbn) ZxcvbnVerify(password string) (bool, string, error) {
-
-	result := zxcvbn.PasswordStrength(password, nil)
-	fmt.Println(result.CalcTime, result.CrackTime, result.Score, result.Entropy)
+	result := zxcvbn.PasswordStrength(pwd, nil)
+	//fmt.Println(result.CalcTime, result.CrackTime, result.Score, result.Entropy)
 	//Score # [0,1,2,3,4] if crack time is less than # [10^2, 10^4, 10^6, 10^8, Infinity]. # (useful for implementing a strength bar.)
 	if result.Score > 3 {
 		return true, "", nil
