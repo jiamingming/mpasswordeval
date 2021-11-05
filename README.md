@@ -3,7 +3,7 @@ eval the strength of a password
 
 
 校验密码的安全性  
-包含以下几点校验
+包含以下几点校验， 其中每项规则可单独开启或关闭
 
 常规规则校验
 * 密码长度 （必须指定）
@@ -13,7 +13,7 @@ eval the strength of a password
 * 是否包含特殊符号
 * 是否通过zxcvbn
 * 是否通过pwned
-* 是否在常用弱密码
+* 是否在常用弱密码 (指定的弱密码集)
 
 
 使用示例
