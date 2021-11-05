@@ -16,9 +16,11 @@ eval the strength of a password
 * 是否在常用弱密码
 
 
-使用示例
-```
+使用示例  
 go get github.com/jiamingming/mpasswordeval  
+
+```
+
 
         //测试密码
         pwd := `Ming2021jshbd`
