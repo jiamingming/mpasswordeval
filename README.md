@@ -32,7 +32,7 @@ eval the strength of a password
 		Length: 8,
 
 	}
-    获取结果
+        //获取结果
 	coreVerify, err2 := mpeval.CoreVerify(pwd)
 	jsonv, _ := json.Marshal(coreVerify)
 	fmt.Println(string(jsonv), err2)
