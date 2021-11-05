@@ -56,6 +56,7 @@ func (mpe *MPasswordEval) CoreVerify(pwd string) (*MpasswordEvalResponse, error)
 		TopDict: true,
 	}
 
+	responseMsg := ""
 	// 常用字典校验
 	if mpe.TopDict {
 		filter, _, _ := mpe.TopDictFilter(pwd)
@@ -66,9 +67,10 @@ func (mpe *MPasswordEval) CoreVerify(pwd string) (*MpasswordEvalResponse, error)
 	}
 	// zxcvbn 规则校验
 	if mpe.Zxcvbn {
-		zxcvbnverify, _, _ := mpe.ZxcvbnVerify(pwd)
+		zxcvbnverify, msg, _ := mpe.ZxcvbnVerify(pwd)
 		if !zxcvbnverify {
 			response.Status = false
+			responseMsg += msg
 		}
 		responseItem.Zxcv = zxcvbnverify
 	}
@@ -86,27 +88,33 @@ func (mpe *MPasswordEval) CoreVerify(pwd string) (*MpasswordEvalResponse, error)
 	// 密码长度
 	if !commonVerify.PwdLength {
 		response.Status = false
+		responseMsg += " 密码长度不足!/ "
 	}
 	// 是否包含特殊符号
 	if !commonVerify.IsSpecial {
 		response.Status = false
+		responseMsg += " 密码不包含特殊符号!/ "
 	}
 	// 是否包含数字
 	if !commonVerify.IsDigit {
 		response.Status = false
+		responseMsg += " 密码不包含数字!/ "
 	}
 	// 是否包含大写字母
 	if !commonVerify.IsUpper {
 		response.Status = false
+		responseMsg += " 密码不包含大写字母!/ "
 	}
 	// 是否包含小写字母
 	if !commonVerify.IsLower {
 		response.Status = false
+		responseMsg += " 密码不包含小写字母!/ "
 	}
 
 	responseItem.CommonStrategy = *commonVerify
 
 	response.VerifyItem = responseItem
+	response.Message = responseMsg
 	return response, nil
 
 }

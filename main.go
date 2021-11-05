@@ -16,9 +16,13 @@ import (
 func main() {
 
 	//pwd := `PassW0rd`
-	//pwd := `qwedcvbhuIOP`
+	//pwd := `123456789asdcvbnm`
+	//pwd := `Pa@zzWord`
 	//pwd := `freepass12324`
-	pwd := `Ming2021jshbd`
+	//pwd := `111111111111`
+	//pwd := `password`
+	//pwd := `mnbvc123456xzasd`
+	pwd := "bvcxzaqwe"
 
 	mpeval := &verifier.MPasswordEval{
 		Digit:   true,
@@ -26,7 +30,7 @@ func main() {
 		Lower:   true,
 		Special: true,
 		Zxcvbn:  true,
-		Pwned:   true,
+		Pwned:   false,
 		TopDict: true,
 		Length:  8,
 	}

@@ -14,7 +14,8 @@ eval the strength of a password - 评估密码强度
 * 是否在常用弱密码 (指定的弱密码集)  
 
 加强规则校验
-* 是否通过zxcvbn （密码强度估计器）
+* 是否通过zxcvbn （密码强度估计器）  
+  目前已开启的校验为， 空间连续输入/重复/序列/常用密码
 * 是否通过pwned （泄漏密码库  https://haveibeenpwned.com/ 提供的api）
 
 
@@ -50,21 +51,23 @@ go get github.com/jiamingming/mpasswordeval
 响应结果示例  
 * status 最终结果， true 代表通过检查， false 代表未通过检查
 * verify_item 每项检查结果
+* message 校验提示信息， 校验通过为空
 ```
+
 {
 	"verify_item": {
-		"zxcv": true,
+		"zxcv": false,
 		"pwned": true,
 		"top_dict": true,
 		"common_strategy": {
-			"is_digit": true,
-			"is_upper": true,
+			"is_digit": false,
+			"is_upper": false,
 			"is_lower": true,
 			"is_special": false,
 			"pwd_length": true
 		}
 	},
-	"message": "",
+	"message": " 密码属于键盘连续输入!/  密 密码不包含数字!/  密码不包含大写字母!/ ",
 	"status": false
 }
 
