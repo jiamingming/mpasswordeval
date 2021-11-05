@@ -18,7 +18,8 @@ eval the strength of a password
 
 使用示例
 ```
-go get github.com/jiamingming/mpasswordeval
+go get github.com/jiamingming/mpasswordeval  
+
         //测试密码
         pwd := `Ming2021jshbd`
         //指定规则
