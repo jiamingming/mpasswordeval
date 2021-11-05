@@ -67,16 +67,16 @@ func (mpe *MPasswordEval) ZxcvbnVerify(pwd string) (bool, string, error) {
 	sequence := result.MatchSequence
 	for _, v := range sequence {
 		if v.Pattern == "dictionary" {
-			errMsg += " 密码属于常用易破解密码!/ "
+			errMsg += " 密码属于常用易破解密码! "
 		}
 		if v.Pattern == "spatial" {
-			errMsg += " 密码属于键盘连续输入!/ "
+			errMsg += " 密码属于键盘连续输入! "
 		}
 		if v.Pattern == "sequence" {
-			errMsg += " 密码属于连续序列!/ "
+			errMsg += " 密码属于连续序列! "
 		}
 		if v.Pattern == "repeat" {
-			errMsg += " 密码包含重复输入!/ "
+			errMsg += " 密码包含重复输入! "
 		}
 	}
 
