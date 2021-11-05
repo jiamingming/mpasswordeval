@@ -1,5 +1,5 @@
 # mpasswordeval
-eval the strength of a password
+eval the strength of a password - 评估密码强度
 
 
 校验密码的安全性  
@@ -16,8 +16,12 @@ eval the strength of a password
 * 是否在常用弱密码 (指定的弱密码集)
 
 
-使用示例
+使用示例  
+go get github.com/jiamingming/mpasswordeval  
+
 ```
+
+
         //测试密码
         pwd := `Ming2021jshbd`
         //指定规则
