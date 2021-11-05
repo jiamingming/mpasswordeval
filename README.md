@@ -15,7 +15,7 @@ eval the strength of a password - 评估密码强度
 
 加强规则校验
 * 是否通过zxcvbn （密码强度估计器）
-* 是否通过pwned （泄漏密码库）
+* 是否通过pwned （泄漏密码库  https://haveibeenpwned.com/ 提供的api）
 
 
 
