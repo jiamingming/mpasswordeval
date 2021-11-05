@@ -67,7 +67,7 @@ go get github.com/jiamingming/mpasswordeval
 			"pwd_length": true
 		}
 	},
-	"message": " 密码属于键盘连续输入!/  密 密码不包含数字!/  密码不包含大写字母!/ ",
+	"message": " 密码属于键盘连续输入!  密码不包含数字!  密码不包含大写字母! ",
 	"status": false
 }
 
