@@ -1,5 +1,5 @@
 # mpasswordeval
-eval the strength of a password - 评估密码强度
+评估密码强度
 
 
 校验密码的安全性  
